@@ -1,0 +1,245 @@
+$backgroundColor:#e7d0e7;
+$color:#fff;
+$color1:#b2b2b3;
+$color2:#a3859a;
+$color2-dark:darken($color2,10%);
+$color2-darker:darken($color2,30%);
+$color3:#0025f1;
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+#player{
+  background:$backgroundColor;
+  height: 100vh;
+  overflow: hidden;
+   .header{
+     height: 100px;
+     text-align: center;
+     h1{
+       color: $color;
+       font-size: 20px;
+       padding-top: 20px;
+     }
+     p{
+       color: $color1;
+       font-size: 12px;
+     }
+     .balis{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+       span{
+         display: block;
+         width: 5px;
+         height: 5px;
+         background: $color2-darker;
+         border-radius: 50%;
+
+         &.current{
+           width: 8px;
+           height: 8px;
+           background: $color2;
+         }
+       }
+     }
+   }
+   .panels{
+     height: calc(100vh - 270px);
+     width: 200vw;
+     display: flex;
+     transition: transform .3s;
+     &.panel1{
+       transform: translateX(0vw);
+     }
+     &.panel2{
+       transform: translateX(-100vw);
+     }
+    .panel-effect{
+      width: 100vw;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .effect{
+        height: 40vh;
+        display: flex;
+        justify-content: center;
+        align-items:flex-end;
+        list-style: none;
+        .effect-1{
+        border-radius: 4px;
+        border-top-right-radius: 50%;
+        border-top-left-radius: 50%;
+        width: 10vw;
+        height: 15vh;
+        background: #882883;
+        background-image: linear-gradient(#ff3cac,#784ba0,#2b86c5);
+        }
+        .effect-2{
+        border-radius: 4px;
+        border-top-right-radius: 50%;
+        border-top-left-radius: 50%;
+        width: 10vw;
+        height: 25vh;
+        background: #bd3e92;
+        background-image: linear-gradient(#e9db84,#d35252);
+        }
+        .effect-3{
+        border-radius: 4px;
+        border-top-right-radius: 50%;
+        border-top-left-radius: 50%;
+        width: 10vw;
+        height: 20vh;
+        background: #c46dbf;
+        background-image: linear-gradient(#da78e7,#e9db84);
+        }
+        .effect-4{
+        border-radius: 4px;
+        border-top-right-radius: 50%;
+        border-top-left-radius: 50%;
+        width: 10vw;
+        height: 18vh;
+        background: #d88db0;
+        background-image: linear-gradient(#ff3cac,#784ba0,#da78e7);
+        }
+        .effect-5{
+        border-radius: 4px;
+        border-top-right-radius: 50%;
+        border-top-left-radius: 50%;
+        width: 10vw;
+        height: 18vh;
+        background: #ab64da;
+        background-image: linear-gradient(#666edb,#d855ac);
+        }
+        .effect-6{
+        border-radius: 4px;
+        border-top-right-radius: 50%;
+        border-top-left-radius: 50%;
+        width: 10vw;
+        height: 18vh;
+        background: #5f65bd;
+        background-image: linear-gradient(#adcccc,#823296);
+        }
+      }
+      .lyrics{
+      //  display: flex;
+      //  flex-direction: column;
+      //  justify-content: center;
+      //  align-items: center;
+      text-align: center;
+      margin-top: 30px;
+      height: 8vh;
+        p{
+          font-size: 13px;
+          color: $color1;
+          margin-top: 15px;
+
+          &.current{
+          color: $color;
+        }
+        }
+
+      }
+    }
+    .panel-lyrics{
+      width: 100vw;
+      height: 100%;
+      text-align: center;
+      overflow: hidden;
+      line-height: 2;
+    
+      .container{
+        p{
+          font-size: 14px;
+          color: $color1;
+
+          &.current{
+            color: $color;
+          }
+    
+        }
+      }
+
+    }
+   }
+   .footer{
+     height: 170px;
+    .buttons{
+      ul{
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        li{
+          margin:0 20px;
+          img{
+            width: 24px;
+            height: 24px;
+            color: $color2;
+          }
+        }
+      }
+    }
+    .area-bar{
+      color: $color1;
+      font-size: 12px;
+      display: flex;
+      padding: 0 25px;
+      margin-top: 20px;
+      align-items: center;
+      .time-start{
+        order: 1;
+      }
+      .time-end{
+        order: 3;
+      }
+      .bar{
+        order: 2;
+        flex: 1;
+        height: 4px;
+        background: $color3;
+        border-radius: 2px;
+        margin: 0 10px;
+        .progress{
+          width: 30%;
+          height: 100%;
+          border-radius: 2px;
+          background: $color2;
+          position: relative;
+  
+          &::after{
+            content: '';
+            position: absolute;
+            right: 0;
+            top: -7px;
+            display: block;
+            width: 16px;
+            height: 16px;
+            background: url(../img/progress.png) 1px 0 no-repeat;
+            background-size: contain;
+          }
+        }
+      }
+    }
+    .actions{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top:20px;
+      padding: 0 20px;
+  
+      svg{
+        width: 28px;
+        height: 28px;
+  
+        &.btn-play-pause{
+          width: 50px;
+          height: 50px;
+        }
+      }
+    }
+   }
+}
